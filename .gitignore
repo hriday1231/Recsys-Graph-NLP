@@ -1,0 +1,29 @@
+# --- System & Environment ---
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# --- Large Data & Artifacts ---
+training/data/
+artifacts/
+results/
+
+# --- Frontend Dependencies ---
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env.local
+
+# --- Backend ---
+backend/.pytest_cache/
+backend/.env
+
+# --- VS Code ---
+.vscode/
+
+# --- Extra ---
+codebase.txt
+commands.txt
+ALLCMDs.md

@@ -1,0 +1,11 @@
+.git
+.gitignore
+.venv/
+frontend/node_modules/
+backend/__pycache__/
+codebase.txt
+commands.txt
+ALLCMDs.md
+
+# Need these:
+!artifacts/

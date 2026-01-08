@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/recsys-graph-nlp/backend', '-f', 'backend/Dockerfile', '.']
+images:
+- 'gcr.io/recsys-graph-nlp/backend'
