@@ -68,4 +68,5 @@ python -m uvicorn backend.app.main:app --reload
 cd frontend
 npm install
 npm run dev
+# Access at http://localhost:3000
 ```
