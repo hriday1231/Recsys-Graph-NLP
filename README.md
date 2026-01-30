@@ -2,10 +2,10 @@
 
 **Live Demo:** [https://recsys-frontend-793739516196.us-central1.run.app](https://recsys-frontend-793739516196.us-central1.run.app)
 
-## 📌 Overview
+## Overview
 This project implements a **Hybrid Recommender System** that bridges the gap between collaborative filtering signals (User-Item Interaction Graph) and semantic understanding (Natural Language Queries). It allows users to receive personalized recommendations based on their history, then "steer" those recommendations using natural language (e.g., *"cartoon robots"*) without losing the personalization signal.
 
-## 🏗 Architecture
+## Architecture
 The system is built as a microservices architecture deployed on **Google Cloud Run**.
 
 * **Graph Model:** LightGCN (PyTorch Geometric) trained on MovieLens 1M to capture high-order collaborative signals.
@@ -14,7 +14,7 @@ The system is built as a microservices architecture deployed on **Google Cloud R
 * **Frontend:** Next.js 16 (App Router) + TypeScript + Tailwind CSS.
 * **Infrastructure:** Dockerized containers on GCP Cloud Run with automated builds via Cloud Build.
 
-## 🔬 Methodology
+## Methodology
 ### 1. Collaborative Signal (Graph)
 We model user-item interactions as a bipartite graph. **LightGCN** (He et al., 2020) propagates user and item embeddings through the graph structure to capture "collaborative" similarity (e.g., *"Users who liked X also liked Y"*). We removed non-linearities to focus purely on graph convolution.
 
@@ -26,7 +26,7 @@ Pure graph models fail when users have explicit, transient intent (e.g., wanting
     $$S_{final} = \alpha \cdot \text{norm}(S_{graph}) + (1-\alpha) \cdot \text{norm}(S_{semantic})$$
     where $\alpha$ allows dynamic balancing between long-term preference and immediate intent.
 
-## 📊 Evaluation Results (Offline)
+## Evaluation Results (Offline)
 Models were trained on the **MovieLens 1M** dataset using a strict stratified split (80% Train, 10% Val, 10% Test) to prevent data leakage.
 
 | Model Variant | Recall@20 | NDCG@20 |
@@ -36,7 +36,7 @@ Models were trained on the **MovieLens 1M** dataset using a strict stratified sp
 
 *Analysis: LightGCN outperforms standard MF by ~27% on Recall, demonstrating the effectiveness of high-order graph propagation in capturing sparse signals.*
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 ### Prerequisites
 * Python 3.11+
